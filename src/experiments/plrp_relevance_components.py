@@ -153,7 +153,7 @@ def get_component_relevance(
     input_layer_idx = layer_idx - 1
     input_comp_k = input_comp_k
 
-    input_ids = tokenizer(chat, return_tensors="pt", add_special_tokens=True).input_ids.to(
+    input_ids = tokenizer(chat, return_tensors="pt", add_special_tokens=False).input_ids.to(
         model.device
     )
     input_embeds = model.get_input_embeddings()(input_ids)

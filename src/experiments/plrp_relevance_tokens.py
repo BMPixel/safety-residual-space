@@ -167,7 +167,7 @@ def get_token_relevance_map(
             len(tokenizer(text, return_tensors="pt", add_special_tokens=False).input_ids[0]) - 1
         )
 
-        input_ids = tokenizer(chat, return_tensors="pt", add_special_tokens=True).input_ids.to(
+        input_ids = tokenizer(chat, return_tensors="pt", add_special_tokens=False).input_ids.to(
             model.device
         )
         input_embeds = model.get_input_embeddings()(input_ids)
